@@ -1,0 +1,40 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/Parent",
+    "definitions": {
+        "Parent": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Children": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Child"
+                    }
+                }
+            },
+            "required": [
+                "Children",
+                "Name"
+            ],
+            "title": "Parent"
+        },
+        "Child": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "$ref": {
+                    "type": "string"
+                }
+            },
+            "required": [],
+            "title": "Child"
+        }
+    }
+}
